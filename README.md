@@ -1,6 +1,7 @@
-# Debate Council — Dynamic Workflow para Claude Code
+# Phyton-para-usar-en-Earnings — Debate Council
 
-Sistema agéntico de debate deliberativo basado en evidencia para Claude Code.
+Este repositorio aloja **Debate Council**, un sistema agéntico de debate deliberativo
+basado en evidencia para Claude Code.
 
 ## Qué es
 
@@ -77,3 +78,28 @@ outputs/json/YYYY-MM-DD_debate-council_<slug>.json
 - Separar hechos, supuestos, inferencias y opiniones.
 - Marcar afirmaciones sin evidencia.
 - Exigir revisión humana para decisiones financieras, legales, laborales, médicas o de alto impacto.
+
+## Estructura del repositorio
+
+```text
+.claude/
+  agents/      12 subagentes (evidence-scout, proponent, opponent, pragmatist,
+                risk-critic, alternative-builder, cross-examiner, evidence-auditor,
+                logic-critic, bias-detector, thesis-framer, final-arbiter)
+  skills/debate-council/   skill /debate-council y rúbricas
+  workflows/   especificación del workflow dinámico
+docs/
+  plans/                   planes de ejecución previos a cada debate
+  debate-workflow-spec.md, operating-manual.md, safety-and-controls.md, ...
+outputs/
+  reports/                 reportes Markdown por corrida
+  json/                    salidas JSON estructuradas por corrida
+```
+
+## Corridas realizadas
+
+- `2026-06-13_debate-council_ia-reemplaza-gerentes` — Tesis: "La IA podrá
+  reemplazar a los gerentes en la toma de decisiones...". Veredicto: **TESIS
+  DÉBIL** (recomendación: dividir en subtesis). Ver
+  [`outputs/reports/2026-06-13_debate-council_ia-reemplaza-gerentes.md`](outputs/reports/2026-06-13_debate-council_ia-reemplaza-gerentes.md)
+  y su [JSON](outputs/json/2026-06-13_debate-council_ia-reemplaza-gerentes.json).
